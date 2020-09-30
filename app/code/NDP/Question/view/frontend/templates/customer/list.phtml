@@ -1,0 +1,65 @@
+<?php if ($block->getQuestions() && count($block->getQuestions())): ?>
+
+
+
+        <?php echo $block->getChildHtml('questions_list_toolbar'); ?>
+
+
+        <table class="data table table-large table-questions" id="my-questions-table">
+            <caption class="table-caption"><?php /* @escapeNotVerified */ echo __('Product Questions') ?></caption>
+            <thead>
+                <tr>
+
+                    <th scope="col" class="col item"><?php /* @escapeNotVerified */ echo __('Product Name') ?></th>
+                    <th scope="col" class="col date"><?php /* @escapeNotVerified */ echo __('Created') ?></th>
+                    <th scope="col" class="col description"><?php /* @escapeNotVerified */ echo __('Question') ?></th>
+                    <th scope="col" class="col "><?php /* @escapeNotVerified */ echo __('Status') ?></th>
+                    <th scope="col" class="col "><?php /* @escapeNotVerified */ echo __('Answered') ?></th>
+                    <th scope="col" class="col actions">&nbsp;</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php foreach ($block->getQuestions() as $_question): ?>
+                <tr>
+                    <td data-th="<?php echo $block->escapeHtml(__('Product Name')) ?>" class="col item">
+                        <strong class="product-name">
+                            <a href="<?php /* @escapeNotVerified */ echo $block->getProductLink() ?>id/<?php /* @escapeNotVerified */ echo $_question->getProductId() ?>"><?php echo $block->escapeHtml($_question->getName()) ?></a>
+                        </strong>
+                    </td>
+
+                    <td data-th="<?php echo $block->escapeHtml(__('Created')) ?>" class="col date"><?php /* @escapeNotVerified */ echo $block->dateFormat($_question->getQuestionCreatedAt()); ?></td>
+
+                    <td data-th="<?php echo $block->escapeHtml(__('Question')) ?>" class="col description">
+                        <?php echo $_question->getQuestionContent() ?>
+                    </td>
+                    <td data-th="<?php echo $block->escapeHtml(__('Status')) ?>" class="col status">
+                        <?php echo $this->helper('NDP\Question\Helper\Data')->getQuestionStatuses()[$_question->getStatusId()] ?>
+                    </td>
+                    <td data-th="<?php echo $block->escapeHtml(__('Answered')) ?>" class="col status">
+                        <?php echo $_question->getAnswerContent() ? __("Yes") : __("No") ?>
+                    </td>
+                    <td data-th="<?php echo $block->escapeHtml(__('Actions')) ?>" class="col actions">
+                        <a href="<?php /* @escapeNotVerified */ echo $block->getQuestionLink() ?>id/<?php /* @escapeNotVerified */ echo $_question->getQuestionId() ?>" class="action more primary btn-blue btn-small">
+                            <span><?php /* @escapeNotVerified */ echo __('See Details') ?></span>
+                        </a>
+                    </td>
+                </tr>
+                <?php endforeach; ?>
+            </tbody>
+        </table>
+
+    <?php if ($block->getToolbarHtml()): ?>
+        <div class="toolbar products-questions-toolbar bottom">
+            <?php echo $block->getToolbarHtml() ?>
+        </div>
+    <?php endif; ?>
+<?php else: ?>
+    <div class="message info empty"><span><?php /* @escapeNotVerified */ echo __('You have submitted no questions.') ?></span></div>
+<?php endif; ?>
+<div class="actions-toolbar">
+    <div class="secondary">
+        <a class="action back" href="<?php echo $block->escapeUrl($block->getBackUrl()) ?>">
+            <span><?php /* @escapeNotVerified */ echo __('Back') ?></span>
+        </a>
+    </div>
+</div>

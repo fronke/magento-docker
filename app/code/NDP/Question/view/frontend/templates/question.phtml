@@ -1,0 +1,20 @@
+
+<div class="row block block-question" id="product-question-container" data-role="product-question">
+    <div class="col-md-12 pager-loading ajax-remove">
+            <p class="text-center">
+            <img alt="<?php /* @escapeNotVerified */ echo __('Loading...') ?>" src="<?php /* @escapeNotVerified */ echo $block->getViewFileUrl('images/loader-2.gif'); ?>" alt="Chargement">
+            </p>
+    </div>
+</div>
+
+<?php echo $block->getChildHtml(); ?>
+
+<script type="text/x-magento-init">
+    {
+        "*": {
+            "NDP_Question/js/process-questions": {
+                "productQuestionUrl": "<?php /* @escapeNotVerified */ echo $block->getProductQuestionUrl();?>"
+            }
+        }
+    }
+</script>
