@@ -3,7 +3,7 @@
     "description": "Questions magento 2",
     "require": {
         "php": ">=5.5",
-        "magento/framework": "*",
+        "magento/framework": "*"
     },
     "type": "magento2-module",
     "version": "1.3",
