@@ -2,7 +2,7 @@
     "name": "fronke/magento-docker",
     "description": "Test fort ndp",
     "type": "project",
-    "version": "1.5",
+    "version": "1.7",
     "license": [
         "OSL-3.0",
         "AFL-3.0"
@@ -13,7 +13,7 @@
     },    
     "autoload": {
         "psr-4": {            
-            "NDP\\": "app/code/NDP/",           
+            "NDP\\": "app/code/NDP/"    
         },
         "psr-0": {
             "": [
