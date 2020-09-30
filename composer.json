@@ -1,0 +1,28 @@
+{
+    "name": "fronke/magento-docker",
+    "description": "Test fort ndp",
+    "type": "project",
+    "version": "1.5",
+    "license": [
+        "OSL-3.0",
+        "AFL-3.0"
+    ],    
+    "require": {
+        "php": "~7.3.0||~7.4.0",        
+        "magento/framework": "*"
+    },    
+    "autoload": {
+        "psr-4": {            
+            "NDP\\": "app/code/NDP/",           
+        },
+        "psr-0": {
+            "": [
+                "app/code/",
+                "generated/code/"
+            ]
+        },
+        "files": [
+            "app/etc/NonComposerComponentRegistration.php"
+        ]
+    },   
+}
