@@ -1,0 +1,93 @@
+Previous,Précédent
+Save and Previous,Enregistrer et Précédent
+Save and Next,Enregistrer et Suivant
+Next,Suivant
+Save Question,Enregistrer la question
+Delete Question,Supprimer la question
+Are you sure you want to do this?,Êtes-vous sûr de vouloir faire ça ?
+Edit Question '%1',Modifier la question '%1'
+New Question,Nouvelle question
+Question Details,Détails de la question
+Product,Produit
+"<a href=""%1"" onclick=""this.target='blank'"">%2 %3</a> <a href=""mailto:%4"">(%4)</a>","<a href=""%1"" onclick=""this.target='blank'"">%2 %3</a> <a href=""mailto:%4"">(%4)</a>"
+Administrator,Administrateur
+Guest,Invité
+Author,Auteur
+Status,Statut
+Question,Question
+Answer,Réponse
+ID,ID
+Created,Créée
+Content,Contenu
+SKU,UGS
+Action,Action
+Edit,Modifier
+Delete,Supprimer
+Are you sure?,Êtes-vous sûr ?
+Update Status,État de mise à jour
+Pending Questions of Customer `%1`,Questions client en attente `%1`
+Pending Questions,Questions en attente
+All Questions of Customer `%1`,Toutes les questions client `%1`
+All Questions of Product `%1`,Toutes les questions produit `%1`
+All Questions,Toutes les questions
+Name,Nom
+Price,Prix
+Quantity,Qualité
+Product Questions,Questions produit
+Date,Date
+Answered,Répondu
+The question has been deleted.,Les questions on été supprimées.
+Something went wrong  deleting this question.,Une erreur s'est produite lors de la suppression de cette question.
+Customer Questions,Questions client
+Edit Question,Modifier la question
+Questions,Questions
+We can't retrieve the product ID.,Nous ne pouvons pas récupérer l'ID du produit.
+Please select question(s).,Veuillez sélectionner la question(s).
+A total of %1 record(s) have been deleted.,Total de %1 d’enregistrement(s) a été supprimé.
+Something went wrong while deleting these records.,Une erreur s'est produite lors de la suppression de cet enregistrement.
+A total of %1 record(s) have been updated.,Total de %1 d'enregistrement(s) a été mis à jour.
+Something went wrong while updating these question(s).,Une erreur s'est produite lors de la mise à jour de ces questions.
+You saved the question.,Vous avez enregistré la question.
+Something went wrong while saving this question.,Une erreur s'est produite lors de l’enregistrement de la question.
+The question was removed by another user or does not exist.,La question a été supprimée par un autre utilisateur ou n'existe pas.
+My Product Questions,Mes questions produit
+Cannot initialize product,Impossible d'initialiser le produit
+You submitted your question for moderation.,Vous avez soumis votre question pour modération.
+We can't post your question right now.,Nous ne pouvons pas poster votre question pour le moment.
+Storage key was not set,La clé de stockage n'a pas été définie
+Please enter a question.,Veuillez poser une question.
+Public,Publique
+Private,Privé
+Pending,En attente
+Product Name,Nom du produit
+Yes,Oui
+No,Non
+Actions,Actions
+See Details,Voir les détails
+You have submitted no questions.,Vous n’avez posé aucune question.
+Back,Revenir
+My Recent Questions,Ma dernière question produit
+Product: ,Produit: 
+View All,Tout voir
+You didn't ask any question yet,Vous n’avez posé aucune question
+Airsoft Entrepôt,Airsoft Entrepot
+Our anwser,Notre réponse
+"Sorry, we didn't answer your question yet","Désolé, nous n’avons pas encore répondu à votre question"
+Back to My Questions,Revenir à Mes questions
+Ratings Question Summary,Résumé des questions
+Be the first to question this product,Soyez le premier à poser une question pour ce produit.
+Ask a question to our technicians,Posez une question à nos techniciens AE
+* Required Fields,* Champs obligatoires
+Ask your question about this product,Posez votre question à propos de ce produit.
+"If we believe your question might be useful to other users, we will publish it on this page with our answer.","Si nous considérons que votre question pourra aider d'autres joueurs, nous la publierons sur cette page avec notre réponse."
+Submit your question,Poser votre question
+"Only registered users can ask questions. Please <a href=""%1"">Sign in</a> or <a href=""%2"">create an account</a>","Seuls les utilisateurs enregistrés peuvent poser des questions. S'il vous plaît <a href=""%1"">Connectez-vous</a> ou <a href=""%2"">Créez un compte</a>"
+%1 Question(s),%1 Question(s)
+No question,Aucune question
+Player's questions about the product,Questions des joueurs pour ce produit
+Loading...,Chargement…
+Average Customer Rating,Note moyenne des joueurs
+Product Rating:,Note du produit :
+Product Rating,Note du produit
+Product Question (submitted on %1):,Question produit (publiée le %1):
+Back to Product Questions,Revenir aux Questions produit

@@ -1,0 +1,7 @@
+<?xml version="1.0"?>
+
+<config xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:module:Magento_Backend:etc/menu.xsd">
+    <menu>
+        <add id="NDP_Question::catalog_questions_ratings_questions_all" title="Questions" translate="title" module="NDP_Question" parent="Magento_Backend::marketing_user_content" sortOrder="10" action="question/product/index" resource="NDP_Question::questions_all"/>
+    </menu>
+</config>

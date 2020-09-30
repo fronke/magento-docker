@@ -1,0 +1,63 @@
+<?php
+
+use NDP\Reviews\Helper\RelativeTime;
+
+$format = IntlDateFormatter::SHORT;
+?>
+<div class="block block-reviews-dashboard col-md-5">
+    <div class="block-title ae-title hpt-blue">
+            <span><?php /* @escapeNotVerified */
+                echo __('My Recent Questions') ?></span>
+    </div>
+
+    <?php if ($block->getQuestions() && count($block->getQuestions())): ?>
+
+        <div class="block-content">
+
+            <?php foreach ($block->getQuestions() as $_question): ?>
+
+                <div class="item question-item review-item">
+
+                    <div class="card-item">
+                        <div class="card-container">
+                            <div class="card-title">
+                                <?php echo nl2br($block->escapeHtml($_question->getQuestionContent())) ?>
+                            </div>
+
+                            <p class="card-date" style="float:none;">
+                                <time datetime="<?php /* @escapeNotVerified */
+                                echo $block->formatDate($_question->getQuestionCreatedAt(), $format) ?>">
+                                    <?php /* @escapeNotVerified */
+                                    echo RelativeTime::getRelativeFormatedTime($_question->getQuestionCreatedAt()) ?>
+                                </time>
+                            </p>
+                        </div>
+                    </div>
+
+                    <div class="item-footer">
+                        <p>
+                            <?php echo __("Product: ") ?>
+                            <strong class="product-name"><a href="<?php /* @escapeNotVerified */
+                                echo $block->getProductLink() ?>id/<?php /* @escapeNotVerified */
+                                echo $_question->getProductId() ?>"><?php echo $block->escapeHtml($_question->getName()) ?></a></strong>
+                        </p>
+                    </div>
+                </div>
+            <?php endforeach; ?>
+
+        </div>
+
+        <div class="block-footer">
+            <a class="action primary btn btn-blue btn-small" href="<?php /* @escapeNotVerified */
+            echo $block->getAllQuestionsUrl() ?>"><span><?php /* @escapeNotVerified */
+                    echo __('View All') ?></span></a>
+        </div>
+
+    <?php else: ?>
+        <div class="message info empty">
+            <div><?php /* @escapeNotVerified */
+                echo __('You didn\'t ask any question yet') ?></div>
+        </div>
+    <?php endif; ?>
+
+</div>

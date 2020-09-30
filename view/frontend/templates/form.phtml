@@ -1,0 +1,82 @@
+<?php
+/**
+ * @var $block \NDP\Question\Block\Form
+ */
+?>
+<div class="block question-add review-add">
+
+
+        <?php if ($block->getAllowWriteQuestionFlag()): ?>
+
+            <div class="post-left-block">
+
+
+                <div class="polygon polygon-profile">
+                    <div class="img"
+                         style="background-image: url(<?php echo $block->getCurrentCustomer()->getVisibleAvatar(); ?>)"></div>
+                </div>
+
+                <div class="review-details">
+                    <p class="customer-name">
+                        <?php echo $block->getCurrentCustomer()->getVisibleNickname(); ?>
+                    </p>
+                </div>
+            </div>
+
+            <div class="post-right-block">
+                <form action="<?php /* @escapeNotVerified */
+                echo $block->getAction() ?>" class="review-form" method="post" id="question-form"
+                      data-bind="scope: 'question-form'">
+                    <?php echo $block->getBlockHtml('formkey'); ?>
+                    <?php echo $block->getChildHtml('form_fields_before') ?>
+                    <fieldset class="fieldset post-fieldset" data-hasrequired="<?php __('* Required Fields'); ?>">
+
+                        <div class="field review-field-text required">
+                            <div class="control">
+                                <textarea name="question_content" id="question_content_field" cols="5" rows="5"
+                                          data-validate="{required:true}" data-bind="value: question().question_content"
+                                          placeholder="<?php /* @escapeNotVerified */
+                                          echo __('Ask your question about this product') ?>"></textarea>
+                            </div>
+                        </div>
+
+                    </fieldset>
+
+                    <fieldset class="fieldset">
+                        <p class="text-right info"><?php /* @escapeNotVerified */
+                            echo __('If we believe your question might be useful to other users, we will publish it on this page with our answer.') ?></p>
+                    </fieldset>
+
+                    <div class="actions-toolbar review-form-actions">
+                        <div class="primary actions-primary">
+                            <button type="submit" class="action primary btn-blue btn-arrow">
+                                <span class="glyph glyph-arrow-right" aria-hidden="true"></span> <span
+                                        class="text"><?php /* @escapeNotVerified */
+                                    echo __('Submit your question') ?></span>
+                            </button>
+                        </div>
+                    </div>
+                </form>
+                <script type="text/x-magento-init">
+                        {
+                            "[data-role=product-question-form]": {
+                                "Magento_Ui/js/core/app": <?php /* @escapeNotVerified */
+                    echo $block->getJsLayout(); ?>
+                            },
+                            "#question-form": {
+                                "NDP_Question/js/error-placement": {}
+                            }
+                        }
+
+                </script>
+            </div>
+
+        <?php else: ?>
+            <div class="message info notlogged" id="question-form">
+                <div>
+                    <?= $block->escapeHtml(__('Only registered users can ask questions. Please <a href="%1">Sign in</a> or <a href="%2">create an account</a>', $block->getLoginLink(), $block->getRegisterUrl()), ['a']) ?>
+                </div>
+            </div>
+        <?php endif ?>
+
+</div>

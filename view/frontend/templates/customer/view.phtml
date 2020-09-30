@@ -1,0 +1,90 @@
+<?php
+use NDP\Reviews\Helper\RelativeTime;
+
+$product = $block->getProductData();
+$_question = $block->getQuestionData();
+
+$format = IntlDateFormatter::SHORT;
+?>
+
+<style>
+    .actions-toolbar > .secondary .action.back {
+        display: block;
+    }
+</style>
+
+<?php if ($product->getId()): ?>
+<div class="customer-question view block-question">
+    <div class="row" id="product-question-container" data-role="product-question">
+
+        <div class="col-md-12">
+            <div class="question-block block-content">
+                <div class="block-top">
+                    <div class="user-panel">
+                        <?php $questionCustomer = $_question->getCustomer(); ?>
+                        <div>
+                            <div class="product-media">
+                                <a class="product-photo" href="<?php /* @escapeNotVerified */ echo $product->getProductUrl() ?>">
+                                    <?php /* customer_account_product_question_page */ ?>
+                                    <?php echo $block->getImage($block->getProductData(), 'customer_account_product_question_page_details')->toHtml() ?>
+                                </a>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="title-panel">
+
+                        <p>
+                            <?php echo __("Product: ") ?>
+                            <strong class="product-name"><a href="<?php /* @escapeNotVerified */ echo $product->getProductUrl() ?>"><?php echo $block->escapeHtml($product->getName()) ?></a></strong>
+                        </p>
+
+                        <p class="date-question">
+                            <time itemprop="datePublished" datetime="<?php /* @escapeNotVerified */ echo $block->formatDate($_question->getCreatedAt(), $format) ?>">
+                                <?php /* @escapeNotVerified */ echo RelativeTime::getRelativeFormatedTime($_question->getCreatedAt()) ?>
+                            </time>
+                        </p>
+                        <h3><?php echo $block->escapeHtml($_question->getQuestionContent()) ?></h3>
+                    </div>
+                </div>
+
+                <!--Collapsing-->
+                <div class="block-bottom">
+
+                    <div class="user-panel">
+                        <div class="polygon polygon-profile-large polygon-black" >
+                            <img class="img" src="<?php echo $this->getViewFileUrl('NDP_Question::images/ae_avatar.png'); ?>" alt="<?php /* @escapeNotVerified */ echo __('Airsoft Entrepot') ?>">
+                        </div>
+
+                        <div class="review-details">
+                            <p class="customer-name"><?php /* @escapeNotVerified */ echo __('Airsoft Entrepôt') ?></p>
+                        </div>
+                    </div>
+
+                    <div class="content-panel">
+
+                        <?php if ($_question->getAnswerContent()): ?>
+                            <p><?php echo __("Our anwser"); ?></p>
+                            <?php echo $_question->getAnswerContent() ?>
+                        <?php else: ?>
+                            <p><?php echo __("Sorry, we didn't answer your question yet"); ?></p>
+                        <?php endif; ?>
+
+                    </div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+
+
+<?php endif; ?>
+
+<div class="actions-toolbar">
+    <div class="secondary">
+        <a class="action back primary btn-blue btn-small" href="<?php /* @escapeNotVerified */ echo $block->getBackUrl() ?>"><span><?php /* @escapeNotVerified */ echo __('Back to My Questions') ?></span></a>
+    </div>
+</div>
