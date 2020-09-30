@@ -1,8 +1,0 @@
-<?xml version="1.0"?>
-
-<page_types xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:noNamespaceSchemaLocation="urn:magento:framework:View/Layout/etc/page_types.xsd">
-    <type id="question_customer_index" label="Customer My Account Product Questions"/>
-    <type id="question_customer_view" label="Customer My Account Question Details"/>
-    <type id="question_product_list" label="Catalog Product Questions List"/>
-    <type id="question_product_view" label="Catalog Product Question View"/>
-</page_types>
